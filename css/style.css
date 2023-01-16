@@ -98,6 +98,57 @@ p .img:hover {
   display: none;
 }
 
+.burger-menu {
+  display: block;
+  width: 20px;
+  height: 15px;
+  position: relative;
+  background: transparent;
+  border: none;
+}
+.burger-menu span,
+.burger-menu::before,
+.burger-menu::after {
+  content: "";
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.burger-menu::before {
+  top: 0;
+  transition-duration: 0.2s;
+}
+.burger-menu::after {
+  bottom: 0;
+  transition-duration: 0.2s;
+}
+.burger-menu span {
+  top: calc(50% - 1px);
+}
+
+.burger-menu:focus::before {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+  background-color: #46b1de;
+}
+.burger-menu:focus:after {
+  top: calc(50% - 1px);
+  transform: rotate(45deg);
+  background-color: #46b1de;
+}
+.burger-menu:focus span {
+  width: 0;
+}
+
+.burger-menu:hover span,
+.burger-menu:hover::before,
+.burger-menu:hover::after{
+  background-color: #46b1de;
+  
+}
+
 .main-section {
   display: flex;
   max-width: 1400px;
@@ -404,7 +455,6 @@ p .img:hover {
 .services-descr {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .services-name-descr {
@@ -508,6 +558,7 @@ p .img:hover {
   background: rgba(217, 217, 217, 0.71);
   padding-left: 70px;
   margin: 5px auto;
+  transition-duration: 0.3s;
 }
 
 .input-text:focus,
@@ -546,6 +597,7 @@ p .img:hover {
   color: #ffffff;
   border: none;
   margin: 5px auto;
+  transition-duration: 0.3s;
 }
 
 .form-button:hover,
@@ -609,6 +661,7 @@ p .img:hover {
 }
 p.footer-nav-items a {
   color: #0f2d4a;
+  transition-duration: 0.3s;
 }
 
 .footer-nav-items :hover {
@@ -686,6 +739,7 @@ p.footer-nav-items a {
 }
 li a:hover {
   color: #0f2d4a;
+  transition-duration: 0.3s;
 }
 .img:hover {
   opacity: 0.5;
@@ -724,6 +778,9 @@ li a:hover {
     color: #1b1d1f;
   }
 
+  .burger-menu {
+    display: none;
+  }
   .main {
     max-width: 460px;
     margin: 25px 80px;
@@ -1529,22 +1586,22 @@ li a:hover {
     position: relative;
   }
 
-    @keyframes display-card-section {
-      0% {
-        margin-left: 250px;
-        opacity: 0;
-      }
-  
-      50% {
-        margin-left: 250px;
-        opacity: 0;
-      }
-  
-      100% {
-        margin-left: 435px;
-        opacity: 1;
-      }
+  @keyframes display-card-section {
+    0% {
+      margin-left: 250px;
+      opacity: 0;
     }
+
+    50% {
+      margin-left: 250px;
+      opacity: 0;
+    }
+
+    100% {
+      margin-left: 375px;
+      opacity: 1;
+    }
+  }
 
   .card-descr {
     display: flex;
@@ -1633,9 +1690,8 @@ li a:hover {
   .services {
     max-width: 1300px;
     height: 650px;
-    
   }
-.services-descr {
+  .services-descr {
     max-width: 1300px;
     height: 400px;
     margin: 30px auto;
@@ -1644,8 +1700,6 @@ li a:hover {
     width: 330px;
     height: 330px;
   }
-
-  
 
   .service1,
   .service2,
@@ -1663,30 +1717,30 @@ li a:hover {
     width: 600px;
     height: 400px;
   }
-  .big-tooth{
+  .big-tooth {
     width: 200px;
-      height: 200px;
+    height: 200px;
   }
-    .service1 {
-      text-align: right;
-      width: 350px;
-      top: 5%;
-      left: -35%;
-    }
-  
-    .service2 {
-      text-align: right;
-      width: 300px;
-      top: 35%;
-      left: -40%;
-    }
-  
-    .service3 {
-      text-align: right;
-      width: 320px;
-      top: 70%;
-      left: -35%;
-    }
+  .service1 {
+    text-align: right;
+    width: 350px;
+    top: 5%;
+    left: -35%;
+  }
+
+  .service2 {
+    text-align: right;
+    width: 300px;
+    top: 35%;
+    left: -40%;
+  }
+
+  .service3 {
+    text-align: right;
+    width: 320px;
+    top: 70%;
+    left: -35%;
+  }
 
   @keyframes animation-ellipses-item {
     from {
@@ -1712,10 +1766,9 @@ li a:hover {
     }
   }
 
-    .attent-img {
-      
-      margin: 0px 0 -40px 0;
-    }
+  .attent-img {
+    margin: 0px 0 -40px 0;
+  }
   .border {
     max-width: 845px;
     min-height: 265px;
@@ -1797,6 +1850,7 @@ li a:hover {
 
   .footer-nav-items :hover {
     color: white;
+    transition-duration: 0.3s;
   }
 
   .footer-nav-workingHours {
